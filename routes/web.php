@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/','FirstController@index');
+Route::get('/show/{id}','FirstController@show');
 Route::get('/create','FirstController@create');
 Route::post('/store','FirstController@store');
 
