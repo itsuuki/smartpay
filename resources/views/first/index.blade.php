@@ -13,6 +13,9 @@
                 @endforeach
             </div>
         </div>
+        <a class="cre-shop" href="/create">
+            新規作成
+        </a>
     </body>
 
 </html>
