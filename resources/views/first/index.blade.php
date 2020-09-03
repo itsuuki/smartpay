@@ -12,10 +12,6 @@
                     </div>
                 @endforeach
             </div>
-            <div class="btns" style="position: absolute;">
-                <div class="red_btn">赤</div>
-                <div class="blue_btn">青</div>
-            </div>
         </div>
     </body>
 
