@@ -8,7 +8,7 @@
             <div class="names">
                 @foreach($shops as $shop)
                     <div class="shop_name">
-                        {{$shop->name}}
+                        <a href="/show/{{$shop->id}}">{{$shop->name}}</a>
                     </div>
                 @endforeach
             </div>
