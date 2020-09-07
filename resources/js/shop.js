@@ -31,15 +31,26 @@ $(function(){
     let pageY = e.pageY; // =>ウィンドウ左上からのy座標
     let clientX = e.clientX; // =>ページ左上からのx座標
     let clientY = e.clientY; // =>ページ左上からのy座標
-    console.log(offsetX)
-    console.log(offsetY)
-    console.log(pageX)
-    console.log(pageY)
-    console.log(clientX)
-    console.log(clientY)
+    // console.log(offsetX)
+    // console.log(offsetY)
+    // console.log(pageX)
+    // console.log(pageY)
+    // console.log(clientX)
+    // console.log(clientY)
     // console.log()
   });
 
+
+ // var targetElement = document.getElementById( "name" ) ;
+ // var clientRect = targetElement.getBoundingClientRect() ;
+ // console.log(clientRect);
+ // $("#right").on("click", function(){
+   // var sss = clientRect.right +1
+   // $('#name').css("transform: translateX", sss);
+    // $('#name').css("font-size", )
+   // console.log(sss)
+ // });
+// });
 
 
   $(document).click(function(e){
@@ -60,3 +71,4 @@ $(function(){
     })
   })
 });
+
