@@ -1,0 +1,16 @@
+.all {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+.side {
+  width: calc(100vw - 70vw);
+  border: solid 1px red;
+}
+
+.shop-main {
+  width: calc(100vw - 30vw);
+  border: solid 1px blue;
+}
+
