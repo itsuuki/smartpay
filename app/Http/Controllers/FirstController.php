@@ -37,7 +37,8 @@ class FirstController extends Controller
 
         $shops = First::all();
 
-        return view('first/index',['shops'=>$shops]);
+        return view('first/index', ['shops'=>$shops]);
+    }
 
     public function show($id) {
         $shop = First::find($id);
