@@ -144,6 +144,25 @@ $(function () {
 
     console.log(sss);
   });
+  $(document).click(function (e) {
+    var target_element = $(e.target); //   console.log(target_element.last().data().index)
+
+    var id = target_element.last().data().index;
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    $.ajax({
+      type: 'get',
+      url: "/elem/".concat(id, "/"),
+      data: {
+        'id': id
+      }
+    }).done(function (response) {
+      console.log(response);
+    });
+  });
 });
 
 /***/ }),
@@ -155,7 +174,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\wi031\Desktop\laravel\smartpay\resources\js\shop.js */"./resources/js/shop.js");
+module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/smartpay/resources/js/shop.js */"./resources/js/shop.js");
 
 
 /***/ })
