@@ -41,16 +41,27 @@ $(function(){
   });
 
 
- // var targetElement = document.getElementById( "name" ) ;
- // var clientRect = targetElement.getBoundingClientRect() ;
- // console.log(clientRect);
- // $("#right").on("click", function(){
-   // var sss = clientRect.right +1
-   // $('#name').css("transform: translateX", sss);
-    // $('#name').css("font-size", )
-   // console.log(sss)
- // });
-// });
+  $(function(){
+    var targetElement = document.getElementById( "name" ) ;
+    var clientRect = targetElement.getBoundingClientRect() ;
+    console.log(clientRect);
+   //  $("#right").on("click", function(){
+   //    var sss = clientRect.right +1
+   //    $('#name').css("transform: translateX", sss);
+   //     $('#name').css("font-size", )
+   //    console.log(sss)
+   //  });
+   // });
+  $('.right').on('click',function(){
+      console.log(clientRect.width)
+
+      //   clientRect.right + 10;
+      clientRect.width += 10;
+      console.log(clientRect.width)
+      $('#name').css('transform', "translateX("+ clientRect.width + 'px'+")");
+  })
+  
+})
 
 
   $(document).click(function(e){
