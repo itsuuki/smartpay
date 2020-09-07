@@ -127,13 +127,22 @@ $(function () {
     var clientX = e.clientX; // =>ページ左上からのx座標
 
     var clientY = e.clientY; // =>ページ左上からのy座標
+    // console.log(offsetX)
+    // console.log(offsetY)
+    // console.log(pageX)
+    // console.log(pageY)
+    // console.log(clientX)
+    // console.log(clientY)
+    // console.log()
+  });
+  var targetElement = document.getElementById("name");
+  var clientRect = targetElement.getBoundingClientRect();
+  console.log(clientRect.right);
+  $("#right").on("click", function () {
+    var sss = clientRect.right + 1;
+    $('#name').css("transform: translateX", sss); // $('#name').css("font-size", )
 
-    console.log(offsetX);
-    console.log(offsetY);
-    console.log(pageX);
-    console.log(pageY);
-    console.log(clientX);
-    console.log(clientY); // console.log()
+    console.log(sss);
   });
 });
 

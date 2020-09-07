@@ -15,7 +15,7 @@
       <label for="name">
           店名
       </label>
-      <div class="aa">
+      <div class="aa" id="aa">
       <input
           id="name"
           name="name"
@@ -78,6 +78,7 @@
     </label>
     <span id="value">50</span>
     <div id="js-target"></div>
+    <button class="right" id="right">右</button>
   </div>
 </div>
 <!-- </div>
