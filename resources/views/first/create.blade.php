@@ -30,7 +30,7 @@
         <p class="card-texts">
 
       <label for="number">
-        電話番号  
+        電話番号
       </label>
       <input
       id="number"
@@ -50,8 +50,15 @@
       value="{{ old('address') }}"
       type="text"
       >
-      
+
       </p>
+      <div class="element" data-index="8">
+          要素1<input type="text">
+
+      </div>
+      <div class="element" data-index="9">
+          要素2<input type="text">
+      </div>
       </div>
       <!-- </div> -->
 

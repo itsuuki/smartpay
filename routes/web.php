@@ -23,6 +23,7 @@ Route::get('/','FirstController@index');
 Route::get('/show/{id}','FirstController@show');
 Route::get('/create','FirstController@create');
 Route::post('First/store','FirstController@store');
+Route::get('/elem/{id}','ElementsController@get');
 
 
 Route::get('/home', 'HomeController@index')->name('home');

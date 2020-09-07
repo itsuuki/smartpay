@@ -1,5 +1,5 @@
 $(function(){
- 
+
   $("#name").on("click", function(){
     console.log("ok")
   });
@@ -9,7 +9,7 @@ $(function(){
     $('#name').css("color", $('#color-dialog').val())
   });
 
-  
+
   var elem = document.getElementById('range');
   console.log(elem)
   var target = document.getElementById('value');
@@ -39,4 +39,24 @@ $(function(){
     console.log(clientY)
     // console.log()
   });
+
+
+
+  $(document).click(function(e){
+      const target_element = $(e.target);
+    //   console.log(target_element.last().data().index)
+    const id = target_element.last().data().index
+    $.ajaxSetup({
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+    });
+    $.ajax({
+        type:'get',
+        url:`/elem/${id}/`,
+        data:{'id':id},
+
+    })
+    .done(function(response){
+        console.log(response);
+    })
+  })
 });
