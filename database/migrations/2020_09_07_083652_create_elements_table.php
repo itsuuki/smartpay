@@ -15,7 +15,9 @@ class CreateElementsTable extends Migration
     {
         Schema::create('elements', function (Blueprint $table) {
             $table->id();
-            $table->string('color');
+            $table->string('color_red');
+            $table->string('color_blue');
+            $table->string('color_green');
             $table->string('fontsize');
             $table->string('height');
             $table->string('width');
