@@ -7,6 +7,7 @@
   <div class="shop-main" id="shop-main">
   <form method="POST" action="{{route('First.store')}}" enctype="multipart/form-data">
       {{ csrf_field() }}
+      <input type="hidden" name="user_id" value="{{$user->id}}">
       <!-- <div class="container">
           <div class="row justify-content-center">
               <div class="col-md-8">
