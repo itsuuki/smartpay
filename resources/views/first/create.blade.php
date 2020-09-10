@@ -85,8 +85,15 @@
       大きさを選択：<input type="range" id="range" min="0" max="100" step="1" value="50">
     </label>
     <span id="value">50</span>
+    <label>
+      太さを選択：<input type="range" id="ranges" min="400" max="900" step="100" value="400">
+    </label>
+    <span id="values">400</span>
     <div id="js-target"></div>
+    <button class="top" id="top">上</button>
     <button class="right" id="right">右</button>
+    <button class="bottom" id="bottom">下</button>
+    <button class="left" id="left">左</button>
   </div>
 </div>
 <!-- </div>
