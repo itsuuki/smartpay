@@ -60,6 +60,8 @@
       <div class="element" data-index="9">
           要素2<input type="text">
       </div>
+      <div  id="add-form">
+      </div>
       </div>
       <!-- </div> -->
 
@@ -94,6 +96,9 @@
     <button class="right" id="right">右</button>
     <button class="bottom" id="bottom">下</button>
     <button class="left" id="left">左</button>
+    <button class="add-form">
+      新規フォーム追加
+    </button>
   </div>
 </div>
 <!-- </div>

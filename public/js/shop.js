@@ -94,8 +94,13 @@
 /***/ (function(module, exports) {
 
 $(function () {
-  $("#name").on("click", function () {
-    console.log("ok");
+  var buildFile = function buildFile() {
+    var html = "\n    <div class=\"addform\">\n      <input\n      id=\"people\"\n      name=\"people\"\n      class=\"people\"\n      value=\"\"\n      type=\"text\"\n      >\n    </div>";
+    return html;
+  };
+
+  $(".add-form").on("click", function () {
+    $('#add-form').append(buildFile());
   });
   $("#color-dialog").on("change", function () {
     // var id =document.activeElement.blur()
@@ -155,25 +160,25 @@ $(function () {
       // console.log(clientRect.width)
       clientRect.height -= 10; // console.log(clientRect.width)
 
-      $('#name').css('transform', "translateY(" + clientRect.height + 'px' + ")");
+      $('#name').css('transform', "translateY(" + clientRect.height + 'px' + ") translateX(" + clientRect.width + 'px' + ")");
     });
     $('.right').on('click', function () {
       // console.log(clientRect.width)
       clientRect.width += 10; // console.log(clientRect.width)
 
-      $('#name').css('transform', "translateX(" + clientRect.width + 'px' + ")");
+      $('#name').css('transform', "translateX(" + clientRect.width + 'px' + ") translateY(" + clientRect.height + 'px' + ")");
     });
     $('.bottom').on('click', function () {
       // console.log(clientRect.width)
       clientRect.height += 10; // console.log(clientRect.width)
 
-      $('#name').css('transform', "translateY(" + clientRect.height + 'px' + ")");
+      $('#name').css('transform', "translateY(" + clientRect.height + 'px' + ") translateX(" + clientRect.width + 'px' + ")");
     });
     $('.left').on('click', function () {
       // console.log(clientRect.width)
       clientRect.width -= 10; // console.log(clientRect.width)
 
-      $('#name').css('transform', "translateX(" + clientRect.width + 'px' + ")");
+      $('#name').css('transform', "translateX(" + clientRect.width + 'px' + ") translateY(" + clientRect.height + 'px' + ")");
     });
   });
   $(document).click(function (e) {

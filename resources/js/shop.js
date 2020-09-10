@@ -1,8 +1,21 @@
 $(function(){
-
-  $("#name").on("click", function(){
-    console.log("ok")
+  const buildFile = ()=> {
+    const html = `
+    <div class="addform">
+      <input
+      id="people"
+      name="people"
+      class="people"
+      value=""
+      type="text"
+      >
+    </div>`;
+    return html;
+  }
+  $(".add-form").on("click", function(){
+    $('#add-form').append(buildFile());
   });
+
   $("#color-dialog").on("change", function(){
     // var id =document.activeElement.blur()
     // console.log(id)
@@ -62,30 +75,29 @@ $(function(){
       // console.log(clientRect.width)
       clientRect.height -= 10;
       // console.log(clientRect.width)
-      $('#name').css('transform', "translateY("+ clientRect.height + 'px'+")");
+      $('#name').css('transform', "translateY("+ clientRect.height + 'px'+") translateX("+ clientRect.width + 'px'+")");
   })
 
   $('.right').on('click',function(){
     // console.log(clientRect.width)
     clientRect.width += 10;
     // console.log(clientRect.width)
-    $('#name').css('transform', "translateX("+ clientRect.width + 'px'+")");
+    $('#name').css('transform', "translateX("+ clientRect.width + 'px'+") translateY("+ clientRect.height + 'px'+")");
   })
 
   $('.bottom').on('click',function(){
     // console.log(clientRect.width)
     clientRect.height += 10;
     // console.log(clientRect.width)
-    $('#name').css('transform', "translateY("+ clientRect.height + 'px'+")");
+    $('#name').css('transform', "translateY("+ clientRect.height + 'px'+") translateX("+ clientRect.width + 'px'+")");
   })
 
   $('.left').on('click',function(){
     // console.log(clientRect.width)
     clientRect.width -= 10;
     // console.log(clientRect.width)
-    $('#name').css('transform', "translateX("+ clientRect.width + 'px'+")");
+    $('#name').css('transform', "translateX("+ clientRect.width + 'px'+") translateY("+ clientRect.height + 'px'+")");
   })
-  
 })
 
 
