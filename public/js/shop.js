@@ -114,6 +114,18 @@ $(function () {
   };
 
   elem.addEventListener('input', rangeValue(elem, target));
+  var elem = document.getElementById('ranges');
+  console.log(elem);
+  var target = document.getElementById('values');
+
+  var rangeValue = function rangeValue(elem, target) {
+    return function (evt) {
+      target.innerHTML = elem.value;
+      $('#name').css("font-weight", target.innerHTML);
+    };
+  };
+
+  elem.addEventListener('input', rangeValue(elem, target));
   var tag = document.getElementById('js-target');
   tag.addEventListener('click', function (e) {
     var offsetX = e.offsetX; // =>要素左上からのx座標
@@ -138,19 +150,29 @@ $(function () {
   $(function () {
     var targetElement = document.getElementById("name");
     var clientRect = targetElement.getBoundingClientRect();
-    console.log(clientRect); //  $("#right").on("click", function(){
-    //    var sss = clientRect.right +1
-    //    $('#name').css("transform: translateX", sss);
-    //     $('#name').css("font-size", )
-    //    console.log(sss)
-    //  });
-    // });
+    console.log(clientRect);
+    $('.top').on('click', function () {
+      // console.log(clientRect.width)
+      clientRect.height -= 10; // console.log(clientRect.width)
 
+      $('#name').css('transform', "translateY(" + clientRect.height + 'px' + ")");
+    });
     $('.right').on('click', function () {
-      console.log(clientRect.width); //   clientRect.right + 10;
+      // console.log(clientRect.width)
+      clientRect.width += 10; // console.log(clientRect.width)
 
-      clientRect.width += 10;
-      console.log(clientRect.width);
+      $('#name').css('transform', "translateX(" + clientRect.width + 'px' + ")");
+    });
+    $('.bottom').on('click', function () {
+      // console.log(clientRect.width)
+      clientRect.height += 10; // console.log(clientRect.width)
+
+      $('#name').css('transform', "translateY(" + clientRect.height + 'px' + ")");
+    });
+    $('.left').on('click', function () {
+      // console.log(clientRect.width)
+      clientRect.width -= 10; // console.log(clientRect.width)
+
       $('#name').css('transform', "translateX(" + clientRect.width + 'px' + ")");
     });
   });
@@ -184,7 +206,7 @@ $(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/macdonalds/laravel/smartpay/resources/js/shop.js */"./resources/js/shop.js");
+module.exports = __webpack_require__(/*! C:\Users\wi031\Desktop\laravel\smartpay\resources\js\shop.js */"./resources/js/shop.js");
 
 
 /***/ })

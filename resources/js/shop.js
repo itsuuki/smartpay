@@ -22,6 +22,18 @@ $(function(){
   elem.addEventListener('input', rangeValue(elem, target));
 
 
+  var elem = document.getElementById('ranges');
+  console.log(elem)
+  var target = document.getElementById('values');
+  var rangeValue = function (elem, target) {
+    return function(evt){
+      target.innerHTML = elem.value;
+      $('#name').css("font-weight", target.innerHTML)
+    }
+  }
+  elem.addEventListener('input', rangeValue(elem, target));
+
+
   let tag = document.getElementById('js-target');
 
   tag.addEventListener('click', function(e){
@@ -45,20 +57,33 @@ $(function(){
     var targetElement = document.getElementById( "name" ) ;
     var clientRect = targetElement.getBoundingClientRect() ;
     console.log(clientRect);
-   //  $("#right").on("click", function(){
-   //    var sss = clientRect.right +1
-   //    $('#name').css("transform: translateX", sss);
-   //     $('#name').css("font-size", )
-   //    console.log(sss)
-   //  });
-   // });
-  $('.right').on('click',function(){
-      console.log(clientRect.width)
 
-      //   clientRect.right + 10;
-      clientRect.width += 10;
-      console.log(clientRect.width)
-      $('#name').css('transform', "translateX("+ clientRect.width + 'px'+")");
+  $('.top').on('click',function(){
+      // console.log(clientRect.width)
+      clientRect.height -= 10;
+      // console.log(clientRect.width)
+      $('#name').css('transform', "translateY("+ clientRect.height + 'px'+")");
+  })
+
+  $('.right').on('click',function(){
+    // console.log(clientRect.width)
+    clientRect.width += 10;
+    // console.log(clientRect.width)
+    $('#name').css('transform', "translateX("+ clientRect.width + 'px'+")");
+  })
+
+  $('.bottom').on('click',function(){
+    // console.log(clientRect.width)
+    clientRect.height += 10;
+    // console.log(clientRect.width)
+    $('#name').css('transform', "translateY("+ clientRect.height + 'px'+")");
+  })
+
+  $('.left').on('click',function(){
+    // console.log(clientRect.width)
+    clientRect.width -= 10;
+    // console.log(clientRect.width)
+    $('#name').css('transform', "translateX("+ clientRect.width + 'px'+")");
   })
   
 })
