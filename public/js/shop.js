@@ -104,9 +104,15 @@ $(function () {
   });
   $("#color-dialog").on("change", function () {
     // var id =document.activeElement.blur()
-    // console.log(id)
     $('#name').css("color", $('#color-dialog').val());
   });
+
+  function getId(ele) {
+    var attr = ele.getAttribute("id"); // input要素のid属性の値を取得
+
+    console.log(attr); //「id01」
+  }
+
   var elem = document.getElementById('range');
   console.log(elem);
   var target = document.getElementById('value');
@@ -180,7 +186,62 @@ $(function () {
 
       $('#name').css('transform', "translateX(" + clientRect.width + 'px' + ") translateY(" + clientRect.height + 'px' + ")");
     });
+    var zindex = 0;
+    $(".puls").on("click", function () {
+      zindex += 1;
+      $('#name').css("z-index", zindex);
+      console.log(zindex);
+    });
+    $(".minus").on("click", function () {
+      zindex -= 1;
+      $('#name').css("z-index", zindex);
+      console.log(zindex);
+    }); // var zindex = 0;
+
+    $(".pul").on("click", function () {
+      zindex += 1;
+      $('#address').css("z-index", zindex);
+      console.log(zindex);
+    });
+    $(".minu").on("click", function () {
+      zindex -= 1;
+      $('#address').css("z-index", zindex);
+      console.log(zindex);
+    });
   });
+
+  function previewFile(file) {
+    // プレビュー画像を追加する要素
+    var preview = document.getElementById('preview'); // FileReaderオブジェクトを作成
+
+    var reader = new FileReader(); // ファイルが読み込まれたときに実行する
+
+    reader.onload = function (e) {
+      var imageUrl = e.target.result; // 画像のURLはevent.target.resultで呼び出せる
+
+      var img = document.createElement("img"); // img要素を作成
+
+      img.src = imageUrl; // 画像のURLをimg要素にセット
+
+      preview.appendChild(img); // #previewの中に追加
+    }; // いざファイルを読み込む
+
+
+    reader.readAsDataURL(file);
+  } // <input>でファイルが選択されたときの処理
+
+
+  var fileInput = document.getElementById('example');
+
+  var handleFileSelect = function handleFileSelect() {
+    var files = fileInput.files;
+
+    for (var i = 0; i < files.length; i++) {
+      previewFile(files[i]);
+    }
+  };
+
+  fileInput.addEventListener('change', handleFileSelect);
   $(document).click(function (e) {
     var target_element = $(e.target); //   console.log(target_element.last().data().index)
 
@@ -199,7 +260,22 @@ $(function () {
     }).done(function (response) {
       console.log(response);
     });
-  });
+  }); //実用には、以下のスクリプトをEventListenerに登録して、何かしらのイベント時に動くようにする必要がある。
+  // 選択範囲の背景を青くする
+  // function blinkBlue(){
+  // var sel = window.getSelection();
+  // console.log(sel)
+  // if(!sel.rangeCount) return; //範囲選択されている箇所がない場合は何もせず終了
+  // var range = sel.getRangeAt(0);
+  // var newNode = document.createElement('span');
+  // newNode.setAttribute('style', 'background-color: blue;'); //範囲選択箇所の背景を青にする
+  // newNode.innerHTML = sel.toString();
+  // range.deleteContents();    // 範囲選択箇所を一旦削除
+  // range.insertNode(newNode); // 範囲選択箇所の先頭から、修飾したspanを挿入
+  // }
+  // //実用にはEventListenerに登録して、何かしらのイベント時に動くようにする必要がある。
+  // //以下では、仮に何かしらのキーが押された時に動くようにした。
+  // window.addEventListener('keydown', blinkBlue)
 });
 
 /***/ }),

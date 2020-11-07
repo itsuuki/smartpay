@@ -16,13 +16,15 @@
       <label for="name">
           店名
       </label>
-      <div class="aa" id="aa">
+      <!-- <div class="aa" id="aa"> -->
+      <div class="shop_culum_1" id="shop_culum_1">
       <input
           id="name"
           name="name"
           class="name {{ $errors->has('name') ? 'is-invalid' : '' }}"
           value="{{ old('name') }}"
           type="text"
+          onclick="getId(this);"
       >
       <!-- <button id="cha">表示変更</button> -->
       </div>
@@ -33,26 +35,37 @@
       <label for="number">
         電話番号
       </label>
+      <div class="shop_culum_2" id="shop_culum_2">
       <input
       id="number"
       name="number"
       class="number {{ $errors->has('number') ? 'is-invalid' : '' }}"
       value="{{ old('number') }}"
       type="text"
+      onclick="getId(this);"
       >
+      </div>
 
       <label for="address">
         地域
       </label>
+      <div class="shop_culum_3" id="shop_culum_3">
       <input
       id="address"
       name="address"
       class="address {{ $errors->has('address') ? 'is-invalid' : '' }}"
       value="{{ old('address') }}"
       type="text"
+      onclick="getId(this);"
       >
+      </div>
 
       </p>
+
+      <div class="file-cla">
+        <input type="file" class="file-cla" id="example">
+      </div>
+      <div id="preview"></div>
       <div class="element" data-index="8">
           要素1<input type="text">
 
@@ -99,6 +112,10 @@
     <button class="add-form">
       新規フォーム追加
     </button>
+    <button class="puls" id="puls">+</button>
+    <button class="minus" id="minus">-</button>
+    <button class="pul" id="puls">+</button>
+    <button class="minu" id="minus">-</button>
   </div>
 </div>
 <!-- </div>
