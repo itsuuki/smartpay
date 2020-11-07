@@ -1,6 +1,6 @@
 .all {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
 }
 
@@ -12,6 +12,21 @@
 .shop-main {
   width: calc(100vw - 30vw);
   border: solid 1px blue;
-  transform: translateX();
+}
+
+#name {
+  z-index: -1;
+  position: relative;
+}
+
+#address {
+  z-index: 2;
+  position: absolute;
+}
+
+#preview img {
+  width: 200px;
+  margin: 10px;
+  border: solid 1px silver;
 }
 
